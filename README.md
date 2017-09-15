@@ -12,12 +12,26 @@ Package is designed for a `es2015+` environment so will need transpiling before 
 
 Add this to your project by using `yarn add window-performance-statistics` or `npm install window-performance-statistics`;
 
-`import { getTiming } from 'window-performance-statistics';`
+```javascript
+import { getTiming } from 'window-performance-statistics';
+```
 
 
-Can only call this method once the browser has finished loading from inside a `window.onload` or `$(document).ready()` function call;
+Can only call this method once the browser has finished loading from inside a 
+```javascript
+window.onload;
+``` 
+or 
 
-`const timing = getTiming()`;
+```javascript
+$(document).ready();
+``` 
+
+To use:
+
+```javascript 
+const timing = getTiming();
+```
 
 Gives you an object containing the following metrics
 ```javascript
