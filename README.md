@@ -1,6 +1,7 @@
-[![npm](https://img.shields.io/npm/dm/window-performance-statistics.svg)]()
-[![npm](https://img.shields.io/npm/dt/window-performance-statistics.svg)]()
-[![npm](https://img.shields.io/npm/v/window-performance-statistics.svg)]()
+[![npm](https://img.shields.io/npm/dm/window-performance-statistics.svg)](https://www.npmjs.com/package/window-performance-statistics)
+[![npm](https://img.shields.io/npm/dt/window-performance-statistics.svg)](https://www.npmjs.com/package/window-performance-statistics)
+[![npm](https://img.shields.io/npm/v/window-performance-statistics.svg)](https://www.npmjs.com/package/window-performance-statistics)
+
 ### Window Performance Statistics
 
 Small javascript package that converts the info in window.performance to usable metrics, useful for tracking page timing events. 
