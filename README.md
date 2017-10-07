@@ -34,26 +34,26 @@ $(document).ready(() =>{
 # Methods
 ## <a name="getTiming()">getTiming()</a>
 
-**Returns -> Timing Response**
-
 **Parameters**
 
-**{time} string | null**
+**{`time`} string | null**
 ```javascript 
 getTiming('seconds')
 ```
 Pass in seconds for all results to be returned in human readable seconds. Default is null, milliseconds.
 
-**Properties**
+**Returns -> Timing Response**
+
+**Timing Response Properties**
 
 | Name | Type | Description |
 | --- | --- | --- |
-| pageComplete | <code>number</code> | {milliseconds} Page load time, from initial request => complete |
-| responseTime | <code>number</code> | {milliseconds} Server response time |
-| domComplete | <code>number</code> | {milliseconds} Time from response to domComplete firing |
-| dns | <code>number</code> | {milliseconds} DNS lookup timing |
-| ttfb | <code>number</code> | {milliseconds} Time to first byte |
-| tti | <code>number</code> | {milliseconds} Time took for DOM to be interactive |
+| pageComplete | <code>number</code> | {`time`} Page load time, from initial request => complete |
+| responseTime | <code>number</code> | {`time`} Server response time |
+| domComplete | <code>number</code> | {`time`} Time from response to domComplete firing |
+| dns | <code>number</code> | {`time`} DNS lookup timing |
+| ttfb | <code>number</code> | {`time`} Time to first byte |
+| tti | <code>number</code> | {`time`} Time took for DOM to be interactive |
 
 
 Example:
@@ -65,3 +65,5 @@ Response:
 ![alt Output][OP]
 
 [OP]: response.png "Response from timing getTiming()"
+
+
