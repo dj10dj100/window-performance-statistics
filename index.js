@@ -1,4 +1,5 @@
 /**
+ * @param {string} time pass in 'seconds' for the results to be in seconds
  * @typedef {Object} TimingResponse
  * @property {number} pageComplete Page load time, from initial request => complete
  * @property {number} responseTime Server response time
@@ -10,10 +11,10 @@
  * @returns {TimingResponse} 
  *         Page load performance metrics
  */
-const getTiming = () => {
+const getTiming = time => {
     if (!window || !window.performance) { return; }
     let perfData = performance.timing;
-    return {
+    let times = {
 
         //page load
         pageComplete: perfData.loadEventEnd - perfData.navigationStart,
@@ -33,7 +34,13 @@ const getTiming = () => {
         //time to interactive
         tti: perfData.domInteractive - perfData.domLoading
 
-    }
+    };
+
+    if (time === 'seconds') {
+        Object.keys(times).map(item => times[item] = times[item] / 1000)
+    };
+
+    return times;
 };
 
 export default getTiming;

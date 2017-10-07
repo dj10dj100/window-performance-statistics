@@ -36,6 +36,14 @@ $(document).ready(() =>{
 
 **Returns -> Timing Response**
 
+**Parameters**
+
+**{time} string | null**
+```javascript 
+getTiming('seconds')
+```
+Pass in seconds for all results to be returned in human readable seconds. Default is null, milliseconds.
+
 **Properties**
 
 | Name | Type | Description |

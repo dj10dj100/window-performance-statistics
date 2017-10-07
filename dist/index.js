@@ -1,16 +1,24 @@
-"use strict";
+'use strict';
 
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-var getTiming = exports.getTiming = function getTiming() {
-
+/**
+ * @param {string} time pass in 'seconds' for the results to be in seconds
+ * @typedef {Object} TimingResponse
+ * @property {number} pageComplete Page load time, from initial request => complete
+ * @property {number} responseTime Server response time
+ * @property {number} domComplete Time from response to domComplete firing
+ * @property {number} dns DNS lookup timing
+ * @property {number} ttfb Time to first byte
+ * @property {number} tti Time took for DOM to be interactive
+ *
+ * @returns {TimingResponse} 
+ *         Page load performance metrics
+ */
+var getTiming = function getTiming(time) {
     if (!window || !window.performance) {
         return;
     }
     var perfData = performance.timing;
-
-    return {
+    var times = {
 
         //page load
         pageComplete: perfData.loadEventEnd - perfData.navigationStart,
@@ -31,4 +39,12 @@ var getTiming = exports.getTiming = function getTiming() {
         tti: perfData.domInteractive - perfData.domLoading
 
     };
+
+    if (time === 'seconds') {
+        Object.keys(times).map(function (item) {
+            return times[item] = times[item] / 1000;
+        });
+    };
+
+    return times;
 };
