@@ -1,10 +1,11 @@
-[![npm](https://img.shields.io/npm/dm/window-performance-statistics.svg)](https://www.npmjs.com/package/window-performance-statistics)
-[![npm](https://img.shields.io/npm/dt/window-performance-statistics.svg)](https://www.npmjs.com/package/window-performance-statistics)
-[![npm](https://img.shields.io/npm/v/window-performance-statistics.svg)](https://www.npmjs.com/package/window-performance-statistics)
 
-### Window Performance Statistics
+[![npm](https://img.shields.io/npm/dm/window-performance-statistics.svg)]()
+[![npm](https://img.shields.io/npm/dt/window-performance-statistics.svg)]()
+[![npm](https://img.shields.io/npm/v/window-performance-statistics.svg)]()
 
-Small javascript package that converts the info in window.performance to usable metrics, useful for tracking page timing events. 
+### <a href="https://www.npmjs.com/package/window-performance-statistics">Window Performance Statistics </a>
+
+Small javascript package that converts the information found  in window.performance api to usable metrics, useful for tracking page timing events. 
 
 You may not need this package, but it's code that I've found myself reusing in several places - so thought I'd package it into something useful for others.
 
@@ -19,40 +20,40 @@ import { getTiming } from 'window-performance-statistics';
 
 Can only call this method once the browser has finished loading from inside a 
 ```javascript
-window.onload;
+window.onload = function () { 
+    const timings = getTiming();
+};
+//OR for jQuery friends
+$(document).ready(() =>{
+    const timings = getTiming();
+});
+
 ``` 
-or 
 
-```javascript
-$(document).ready();
-``` 
 
-To use:
+# Methods
+## <a name="getTiming()">getTiming()</a>
 
+**Returns -> Timing Response**
+
+**Properties**
+
+| Name | Type | Description |
+| --- | --- | --- |
+| pageComplete | <code>number</code> | {milliseconds} Page load time, from initial request => complete |
+| responseTime | <code>number</code> | {milliseconds} Server response time |
+| domComplete | <code>number</code> | {milliseconds} Time from response to domComplete firing |
+| dns | <code>number</code> | {milliseconds} DNS lookup timing |
+| ttfb | <code>number</code> | {milliseconds} Time to first byte |
+| tti | <code>number</code> | {milliseconds} Time took for DOM to be interactive |
+
+
+Example:
 ```javascript 
 const timing = getTiming();
 ```
+Response:
 
-Gives you an object containing the following metrics
-```javascript
-{
-    //page load
-    pageComplete,
+![alt Output][OP]
 
-    //responseTime
-    responseTime,
-
-    //page render time
-    domComplete,
-
-    //dns lookup
-    dns,
-
-    //time to first byte
-    ttfb,
-
-    //time to interactive
-    tti
-
-}
-```
+[OP]: response.png "Response from timing getTiming()"
