@@ -43,4 +43,4 @@ const getTiming = time => {
     return times;
 };
 
-export default getTiming;
+module.exports = getTiming;
