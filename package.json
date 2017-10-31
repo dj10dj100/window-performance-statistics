@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "watch": "babel index.js --watch --out-file ./dist/index.js",
-    "build": "",
+    "build": "babel index.js --out-file ./dist/index.js",
     "serve": "yarn watch & python -m SimpleHTTPServer 8000",
     "validate": "npm ls"
   },

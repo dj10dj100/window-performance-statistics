@@ -48,3 +48,5 @@ var getTiming = function getTiming(time) {
 
     return times;
 };
+
+module.exports = getTiming;
